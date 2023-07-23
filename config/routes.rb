@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # localost:3000/posts
   # resourseで定義することによってルーティングのデフォが定義される
     # localost:3000/posts/index
-  resources :posts, only: [:index]
+  resources :posts, only: [:index, :new, :create,:edit, :update, :destroy]
 end

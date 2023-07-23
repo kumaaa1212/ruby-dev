@@ -1,1 +1,31 @@
-<h1>hello aaaaaa</h1>
+<h1>掲示板アプリ</h1>
+<div class="button-container">
+<%= link_to '新規投稿', new_post_path, class:"link-button"  %>
+</div>
+<ul>
+<% @posts.each do |post| %>
+<%
+=begin%>
+ <%= @posts.each do |post| %>ここでイコールをつけてしまうと、postの中身が表示されてしまう。値をお返してしまうので、イコールをつけないようにする。 
+<%
+=end%>
+<li>
+<h2><%= post.title %></h2>
+<p><%= post.content %></p>
+<small><%= post.created_at %></small>
+<div>
+</div>
+<%= link_to "編集", edit_post_path(post), class:"link-button"%>
+<%= button_to "削除",post_path(post),method: :delete,class:"link-delete-button"%>
+<% end %>
+</ul>
+
+
+
+<%
+=begin%>
+ 
+edit_post_path
+new_post_path 
+<%
+=end%>
